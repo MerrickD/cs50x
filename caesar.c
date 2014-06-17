@@ -9,7 +9,7 @@ void print_cipher(string message, int k);
 int main(int argc, string argv[]) {
 	
 	// clear the screen via stdlib.h
-	// system("clear");
+	system("clear");
 
 	// only accept a single command-line argument	
 	if (argc == 1 || argc > 2) {
@@ -18,13 +18,13 @@ int main(int argc, string argv[]) {
 	}	
 
 	// get message to cipher from user
-	// printf("Message to cipher: ");
+	printf("Message to cipher: ");
 	string message = GetString();
 
-	// printf("===============================\n");
-	// printf("Message: %s\n", message);	
-	// printf("Cipher strength: %s\n", argv[1]);
-	// printf("===============================\n");
+	printf("===============================\n");
+	printf("Message: %s\n", message);	
+	printf("Cipher strength: %s\n", argv[1]);
+	printf("===============================\n");
 
 	print_cipher(message, atoi(argv[1]));
 	
