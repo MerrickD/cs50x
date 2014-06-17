@@ -1,3 +1,12 @@
+/**
+ * caesar.c
+ * pset2
+ * 
+ * Implementation of the Caesar cipher (http://en.wikipedia.org/wiki/Caesar_cipher)
+ *
+ */
+
+
 #include <stdio.h>
 #include <cs50.h>
 #include <string.h>
