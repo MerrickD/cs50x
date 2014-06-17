@@ -1,6 +1,8 @@
 /**
  * caesar.c
- * pset2
+ * 
+ * Merrick A. Dennis
+ * merrickd@verizon.net 
  * 
  * Implementation of the Caesar cipher (http://en.wikipedia.org/wiki/Caesar_cipher)
  *
