@@ -15,9 +15,10 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-void print_cipher(string message, int k);
+void print_cipher(string message, char *k[]);
+int shift(int letter);
 
-int main(int argc, string argv[]) {
+int main(int argc, char *argv[]) {
 	
 	// clear the screen via stdlib.h
 	system("clear");
@@ -48,12 +49,54 @@ int main(int argc, string argv[]) {
 	printf("Cipher text: %s\n", argv[1]);
 	printf("===============================\n");
 
-	// print_cipher(message, atoi(argv[1]));
+	print_cipher(message, argv);
 	
 }
 
 // print the encrypted message
-void print_cipher(string message, int k) {	
+// c = (p_i + k_j) % 26
+void print_cipher(string message, char *k[]) {
 
+	int j = 0;
+
+	for (int i = 0; i <= strlen(message); i++) {
+		// Check if the current character needs to be encrypted
+		if (isalpha(message[i])) {
+			// Cipher uppercase letters
+			if (isupper(message[i])) {
+				printf("%c", (((message[i] - 65) + shift(k[1][j])) % 26) + 65);				
+			}
+			// Cipher lowercase letters
+			else if (islower(message[i])) {						
+				printf("%c", (((message[i] - 97) + shift(k[1][j])) % 26) + 97);				
+			}
+		}
+		// If the character is not a letter, just print it.
+		else {
+			printf("%c", message[i]);
+			continue;
+		}
+		// Don't increment past the length of the cipher word; -1 because of carriage return
+		if (j == strlen(k[1]) - 1) {
+			j = 0;
+		} else {
+			j++;
+		}
+	}
+	printf("\n");
 	
+}
+
+// get the shift value for the supplied letter of the key
+int shift(int letter) {
+
+	if (isupper(letter)) {
+		int shift = letter - 65;
+		return shift;
+	} else if (islower(letter)) {
+		int shift = letter - 97;
+		return shift;
+	}
+
+	return 0;
 }
