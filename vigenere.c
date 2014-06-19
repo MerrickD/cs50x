@@ -6,7 +6,7 @@
  * 
  * Implementation of the Vigenère cipher (http://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)
  *
- * Usage: ./vigenere <cipher key> e.g. ./vegenere google     
+ * Usage: ./vigenere <cipher key> e.g. ./vigenere google     
  *
  */
 
